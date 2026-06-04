@@ -8,7 +8,7 @@
   Implementing a new way to get beautiful custom canvas videos for the ViviMusic app!
 </p>
 
-This repository acts as the central hub for mapping custom `.m3u8` videos to specific songs or albums within ViviMusic. Any changes you push to this repository are automatically deployed to our official hub: https://vivimusic-canvas.nfy.fyi. 
+This repository acts as the central hub for mapping custom `.m3u8` videos to specific songs or albums within ViviMusic. Any changes you push to this repository are automatically deployed to our official hub: https://vivimusicanvas.mkmdevilmi.workers.dev. 
 
 ## How to add a new Canvas
 
@@ -30,7 +30,7 @@ Make sure your URL points to our deployed domain!
     {
       "song": "Song Title",
       "artist": "Artist Name",
-      "url": "https://vivimusic-canvas.nfy.fyi/Song/your_video.m3u8"
+      "url": "https://vivimusicanvas.mkmdevilmi.workers.dev/Song/your_video.m3u8"
     }
   ]
 }
@@ -75,3 +75,4 @@ node scripts/validate_canvas.js
 ## License
 
 This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
+
