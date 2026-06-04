@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="App%20Logo/vivimusic.png" alt="ViviMusic Logo" width="100" height="100">
+  <img src="App%20Logo/vivimusic.png" alt="ViviMusic Logo" width="180" height="180">
 </p>
 
-# vivimusicanvas
+<h1 align="center">VIVI MUSIC</h1>
 
-Implementing a new way to get beautiful custom canvas videos for the ViviMusic app!
+<p align="center">
+  Implementing a new way to get beautiful custom canvas videos for the ViviMusic app!
+</p>
 
 This repository acts as the central hub for mapping custom `.m3u8` videos to specific songs or albums within ViviMusic. Any changes you push to this repository are automatically deployed to our official hub: https://vivimusic-canvas.nfy.fyi. 
 
