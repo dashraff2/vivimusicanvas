@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="App%20Logo/vivimusic.png" alt="ViviMusic Logo" width="100" height="100">
+</p>
+
 # vivimusicanvas
 
 Implementing a new way to get beautiful custom canvas videos for the ViviMusic app!
 
-This repository acts as the central hub for mapping custom `.m3u8` videos to specific songs or albums within ViviMusic. It is powered by Vercel, meaning any changes you push to this repository are instantly deployed and served via a lightning-fast global CDN. 
+This repository acts as the central hub for mapping custom `.m3u8` videos to specific songs or albums within ViviMusic. Any changes you push to this repository are automatically deployed to our official hub: https://vivimusic-canvas.nfy.fyi. 
 
 ## How to add a new Canvas
 
@@ -15,7 +19,7 @@ Upload your `.m3u8` file into either the `Song/` or `Album/` directories within 
 ### 2. Update `canvas.json`
 Open the `canvas.json` file located in the root of the repository. You will add a new block to the `"items"` array mapping the exact song name and artist to your new video URL.
 
-Make sure your URL points to your deployed Vercel domain!
+Make sure your URL points to our deployed domain!
 
 **Example:**
 ```json
@@ -24,7 +28,7 @@ Make sure your URL points to your deployed Vercel domain!
     {
       "song": "Song Title",
       "artist": "Artist Name",
-      "url": "https://vivimusicanvas.vercel.app/Song/your_video.m3u8"
+      "url": "https://vivimusic-canvas.nfy.fyi/Song/your_video.m3u8"
     }
   ]
 }
@@ -49,7 +53,7 @@ git commit -m "feat: added canvas for Song Title"
 git push
 ```
 
-That's it! Vercel will automatically redeploy your changes. The next time you play that song in ViviMusic, your custom video will automatically be fetched and looped in the background!
+That's it! Our deployment workflow will automatically redeploy your changes to the live site. The next time you play that song in ViviMusic, your custom video will automatically be fetched and looped in the background!
 
 ## Continuous Integration
 
