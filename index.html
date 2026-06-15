@@ -63,8 +63,8 @@
                     <span class="step-number">02</span>
                     <i class="fas fa-code"></i>
                     <h3>Update JSON</h3>
-                    <p>Add a new entry to <code>canvas.json</code> mapping the <strong>Song Title</strong> and
-                        <strong>Artist</strong> to your public URL.</p>
+                    <p>Add a new entry to <code>canvas.json</code> mapping the <strong>Song Title</strong>,
+                        <strong>Artist</strong>, and <strong>Album</strong> to your public URL.</p>
                 </article>
 
                 <article class="step-card">
@@ -182,6 +182,7 @@
                     <div class="card-info">
                         <h2>${item.song}</h2>
                         <h3>${item.artist}</h3>
+                        <p class="album-tag"><i class="fas fa-compact-disc"></i> ${item.album || 'N/A'}</p>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -214,7 +215,7 @@
                 itemEl.innerHTML = `
                     <div class="item-info">
                         <strong>${item.song}</strong>
-                        <span>${item.artist}</span>
+                        <span>${item.artist} &bull; ${item.album || 'N/A'}</span>
                     </div>
                     <div class="status-badge">
                         <i class="fas fa-check-circle"></i> Added
@@ -234,7 +235,8 @@
             } else {
                 const filtered = allItems.filter(item =>
                     item.song.toLowerCase().includes(term) ||
-                    item.artist.toLowerCase().includes(term)
+                    item.artist.toLowerCase().includes(term) ||
+                    (item.album && item.album.toLowerCase().includes(term))
                 );
                 renderGallery(filtered);
                 renderAvailability(filtered);

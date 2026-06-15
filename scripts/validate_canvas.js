@@ -38,18 +38,18 @@ function validate() {
   const seen = new Set();
 
   items.forEach((item, index) => {
-    const { song, artist, url } = item;
+    const { song, artist, album, url } = item;
 
     // 1. Missing fields
-    if (!song || !artist || !url) {
-      errors.push({ index, song: song || 'N/A', artist: artist || 'N/A', error: 'Missing required fields' });
+    if (!song || !artist || !album || !url) {
+      errors.push({ index, song: song || 'N/A', artist: artist || 'N/A', error: 'Missing required fields (song, artist, album, url)' });
       return;
     }
 
     // 2. Duplicates
-    const key = `${song.toLowerCase()}|${artist.toLowerCase()}`;
+    const key = `${song.toLowerCase()}|${artist.toLowerCase()}|${album.toLowerCase()}`;
     if (seen.has(key)) {
-      errors.push({ index, song, artist, error: 'Duplicate song/artist entry' });
+      errors.push({ index, song, artist, error: `Duplicate song/artist/album entry: ${album}` });
     } else {
       seen.add(key);
     }
