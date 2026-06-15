@@ -19,7 +19,7 @@ Upload your `.m3u8` file into either the `Song/` or `Album/` directories within 
 *Example: `Song/dracula_visualizer.m3u8`*
 
 ### 2. Update `canvas.json`
-Open the `canvas.json` file located in the root of the repository. You will add a new block to the `"items"` array mapping the exact song name and artist to your new video URL.
+Open the `canvas.json` file located in the root of the repository. You will add a new block to the `"items"` array mapping the exact song name, artist, and album to your new video URL.
 
 Make sure your URL points to our deployed domain!
 
@@ -30,6 +30,7 @@ Make sure your URL points to our deployed domain!
     {
       "song": "Song Title",
       "artist": "Artist Name",
+      "album": "Album Name",
       "url": "https://vivimusicanvas.mkmdevilmi.workers.dev/Song/your_video.m3u8"
     }
   ]
@@ -62,9 +63,9 @@ That's it! Our deployment workflow will automatically redeploy your changes to t
 To ensure the integrity of the `canvas.json` and prevent broken links, we have an automated **Validation Bot** that checks every Pull Request:
 
 1.  **JSON Syntax**: Ensures the file is correctly formatted.
-2.  **Schema Check**: Verifies that `song`, `artist`, and `url` fields are present for every entry.
+2.  **Schema Check**: Verifies that `song`, `artist`, `album`, and `url` fields are present for every entry.
 3.  **Local File Check**: Verifies that the video file referenced in the URL actually exists in the `Song/` or `Album/` directory.
-4.  **No Duplicates**: Ensures that no two entries have same (song, artist) combination.
+4.  **No Duplicates**: Ensures that no two entries have same (song, artist, album) combination.
 5.  **Format Check**: Ensures URLs end in `.mp4` or `.m3u8`.
 
 You can also run this check locally if you have Node.js installed:
